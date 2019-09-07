@@ -1,0 +1,75 @@
+<view id="detail-head">
+  <view id="detail-head-basic">
+    <view id="detail-head-basic-text">
+      <text class='car-name'>{{car.carName}}</text>
+      <text class='car-price'>{{car.carPriceMin + '万-' + car.carPriceMax + '万'}}</text>
+    </view>
+    <view id="detail-head-basic-button">
+      <button wx:if="{{car.isAppoint == 0}}" size='mini' class='green' bindtap='appoint' data-statu="open">预约</button>
+      <button wx:if="{{car.isAppoint == 1}}" size='mini' class='green' bindtap='changeAppoint' data-statu="open">修改预约时间</button>
+      <button wx:if="{{car.isAppoint == 1}}" size='mini' class='danger' bindtap='cancelAppoint'>取消预约</button>
+    </view>
+  </view>
+
+  <scroll-view id="car-introduction" scroll-y="true">
+    <text class='car-introduction'>{{car.introduction}}</text>
+  </scroll-view>
+</view>
+
+<view id="detail-img">
+  <view class="detail-img-item {{idx%2==0?'detail-img-item-left':'detail-img-item-right'}}"  
+    wx:for="{{car.carImages}}"  wx:key='idx' wx:for-index="idx" bindtap='showImg' wx:for-item='image' data-current="{{image}}">
+    <image mode="scaleToFill" src="{{image_url_pre + image.url}}"></image>
+  </view>
+</view>
+
+
+
+
+<!--预约时间弹框-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  <view class="drawer_title">请选择预约时间</view>  
+  <view class="drawer_content" style='height:130rpx;'>  
+    <view class="section">
+      <picker class='time-picker' mode="multiSelector" bindchange="bindPickerChange" bindtap='pickerTap' value="{{multiIndex}}" range="{{multiArray}}">
+      <input class="input_base input_h30 col-1 input-margin" 
+          value="{{appointmentDate}}" name="username" disabled='disable'></input> 
+      </picker>
+    </view>
+  </view>
+  <view id="form-button">
+    <button class="button-cancel" size="mini" bindtap="powerDrawer" data-statu="close">取消</button>
+    <button class="button-sure" size="mini" bindtap="appointOrUpdate" data-statu="close">确定</button>
+  </view>
+</view>
+
+
+<!--我的名片-->  
+<view class="drawer_screen" bindtap="businessCardDrawer" data-statu="close" wx:if="{{showModalCardStatus}}"></view>  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalCardStatus}}">   
+  <view class="drawer_title">我的名片</view>  
+  <view class="drawer_content">  
+    <view class="top grid">  
+      <label class="title col-0">姓名：</label>  
+      <input class="input_base input_h30 col-1" bindinput='inputUsername' name="username" value="{{user.username}}"></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">性别：</label>  
+      <radio-group bindchange='sexCahnge'>
+        <radio value='1'>先生</radio>
+        <radio value='2'>女士</radio>
+      </radio-group>
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">手机：</label>  
+      <input class="input_base input_h30 col-1"  bindinput='inputPhone' name="phone" value="{{user.phone}}"></input>  
+    </view> 
+    <view style='font-size:14px;text-align:center;line-height:50rpx;color:red'>{{validateMsg}}</view> 
+  </view>
+  <view id="form-button">
+    <button class="button-cancel" size="mini" bindtap="businessCardDrawer" data-statu="close">取消</button>
+    <button class="button-sure" size="mini" bindtap="updateBusinessCard" data-statu="close">确定</button>
+  </view>
+</view>
+

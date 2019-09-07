@@ -1,0 +1,14 @@
+<view id="customized">
+  <text class="title">枢木工作室</text>
+  <view class="content">
+    <view class="info-line">
+      <text class="label">联系我们，</text><text class="text">定制属于您自己的小程序!</text>
+    </view>
+    <view class="info-line">
+      <text class="label">联系人：</text><text class="text">枢木</text>
+    </view>
+    <view class="info-line">
+      <text class="label">联系方式：</text><text class="text">18355622545</text>
+    </view>
+  </view>
+</view>

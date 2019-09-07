@@ -1,0 +1,96 @@
+/* pages/index/index.wxss */
+
+#shop-head{
+  border: solid 1px #ccc;
+  border-radius:5px;
+  margin:10rpx;
+  padding:10rpx
+}
+
+#shop-head text{
+  display:block;
+  width:680rpx;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:16px;
+  color:#888;
+}
+
+.imagecenter{
+ display:flex;                   
+ justify-content: center;  
+}
+.imagecenter image { 
+  width:680rpx;
+  height:400rpx;
+  background-color: #eeeeee; 
+  border-radius:5px;
+  box-shadow: darkgrey 4px 4px 10px 1px;
+  margin:5px 0 5px 0;
+}
+
+#car-list{
+  border: solid 1px #ccc;
+  border-radius:5px;
+  margin:10rpx;
+  padding:10rpx 10rpx 0 10rpx;
+}
+
+.car-list-item{
+  clear: both;
+  height:235rpx;
+  margin-bottom: 10rpx;
+}
+
+.car-list-images{
+  width:50%;
+  display:flex;                   
+  justify-content: center;
+  float:left
+}
+
+.car-list-images image{
+  width:95%;
+  height:210rpx;
+  background-color: #eeeeee; 
+  border-radius:5px;
+  box-shadow: darkgrey 0px 4px 10px 1px;
+  margin:5rpx 0 5rpx 0;
+}
+
+.car-list-text{
+  margin:5rpx 0 5rpx 0;
+  width:45%;
+  float:left;
+}
+
+.car-list-text text{
+  display:block;
+  margin: 0 0 20rpx 15rpx;
+}
+
+.car-list-text .car-name{
+  font-size: 38rpx;
+  font-weight: bold
+}
+
+.car-list-text .car-price{
+  font-size: 32rpx;
+  color:#777
+}
+
+.car-list-text button{
+  border:1px solid #f00;
+  color:red;
+  margin: 0 0 10rpx 15rpx;
+}
+
+.right-img{
+  float:left;
+}
+
+.right-img image{
+  width:30rpx;
+  height: 30rpx;
+  margin-top: 105rpx
+}

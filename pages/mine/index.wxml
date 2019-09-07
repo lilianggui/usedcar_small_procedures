@@ -1,0 +1,66 @@
+<view id='userInfo'>
+  <view class="page-body-info">
+    <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    <open-data class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
+  </view>
+</view>
+
+<view id='business-card'>
+  <view class="title-and-edit">
+    <text class="business-card-title">我的名片</text>
+    <image bindtap="editBusinessCard" data-statu="open" class='edit-business-card' mode="scaleToFill" src='/pages/image/bianji.png'></image>
+  </view>
+  <view class="business-card-info">
+    <text>姓名：{{user.username}}</text>
+    <text>性别：{{sex_dict[user.sex]}}</text>
+    <text>手机：{{user.phone}}</text>
+  </view>
+</view>
+
+<view id='mine-bottom'>
+  <view class="mine-bottom-item" bindtap="toMyAppointment" style='border-bottom:1px solid #eeeeee; padding-bottom:10rpx;margin-bottom:10rpx'>
+    <image class='my-appointment-icon' mode="scaleToFill" src='/pages/image/yuyue.png'></image>
+    <text class="my-appointment" >我的预约</text>
+    <image class='mine-right-icon' style='margin-left: 400rpx' mode="scaleToFill" src='/pages/image/xiangyou.png'></image>
+  </view>
+  <view class="mine-bottom-item" bindtap="toCustomized">
+    <image class='xiaochengxu-icon' mode="scaleToFill" src='/pages/image/xiaochengxu.png'></image>
+    <text class="business-card-title">小程序定制</text>
+    <image class='mine-right-icon' style='margin-left: 365rpx' mode="scaleToFill" src='/pages/image/xiangyou.png'></image>
+  </view>
+</view>
+
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  
+  <!--drawer content-->  
+  <view class="drawer_title">我的名片</view>  
+  <view class="drawer_content">  
+    <view class="top grid">  
+      <label class="title col-0">姓名：</label>  
+      <input class="input_base input_h30 col-1" bindinput='inputUsername' name="username" value="{{user.username}}"></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">性别：</label>  
+      <radio-group bindchange='sexCahnge'>
+        <radio value='1' checked="{{user.sex == 1 ? 'checked' : ''}}">先生</radio>
+        <radio value='2' checked="{{user.sex == 2 ? 'checked' : ''}}">女士</radio>
+      </radio-group>
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">手机：</label>  
+      <input class="input_base input_h30 col-1"  bindinput='inputPhone' name="phone" value="{{user.phone}}"></input>  
+    </view>  
+    <view style='font-size:14px;text-align:center;line-height:50rpx;color:red'>{{validateMsg}}</view> 
+  </view>  
+  <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>   -->
+  <view id="form-button">
+    <button class="button-cancel" size="mini" bindtap="powerDrawer" data-statu="close">取消</button>
+    <button class="button-sure" size="mini" bindtap="updateBusinessCard" data-statu="close">确定</button>
+  </view>
+</view>

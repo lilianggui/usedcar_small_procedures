@@ -1,0 +1,62 @@
+#my-appointment-list{
+  border: solid 1px #ccc;
+  border-radius:5px;
+  margin:10rpx;
+  padding:10rpx 10rpx 0 10rpx;
+}
+
+.my-appointment-item{
+  clear: both;
+  height:300rpx;
+  margin-bottom: 20rpx;
+}
+
+.my-appointment-images{
+  width:50%;
+  display:flex;                   
+  justify-content: center;
+  float:left
+}
+
+.my-appointment-images image{
+  width:95%;
+  height:210rpx;
+  background-color: #eeeeee; 
+  border-radius:5px;
+  box-shadow: darkgrey 0px 4px 10px 1px;
+  margin:5rpx 0 5rpx 0;
+}
+
+.my-appointment-text{
+  margin:5rpx 0 5rpx 0;
+  width:50%;
+  float:right;
+}
+
+.my-appointment-text text{
+  display:block;
+  margin: 0 0 25rpx 15rpx;
+}
+
+.my-appointment-text .car-name{
+  font-size: 38rpx;
+  font-weight: bold
+}
+
+.my-appointment-text .car-price{
+  font-size: 32rpx;
+  color:#777
+}
+
+.my-appointment-text button{
+  border:1px solid #f00;
+  color:red;
+  margin: 0 0 10rpx 15rpx;
+}
+
+#arrive-shop-time{
+  display: block;
+  width:100%;
+  clear:both;
+  font-size: 32rpx;
+}

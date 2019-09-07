@@ -1,0 +1,29 @@
+<view id="shop-head">
+  <text >{{shop_info.shopName}}</text>
+  <view class='imagecenter'>
+    <image mode="scaleToFill" src="{{shop_info.shopImage ? image_url_pre + shop_info.shopImage : '' }}" bindtap='showImage'></image>
+  </view>
+  <text >地址：{{shop_info.address}}</text>
+  <text >服务热线：{{shop_info.telephone}}</text>
+</view>
+
+
+<view id="car-list">
+  <view class="car-list-item"  
+    wx:for='{{car_list}}' wx:key='carId' wx:for-item='car' style='border-bottom:{{index!=car_list.length-1?"1px":"0"}} solid #dddddd' 
+    bindtap='to_detail' data-car="{{car}}">
+    <view class='car-list-images'>
+      <image mode="scaleToFill" src="{{image_url_pre + car.mainImage}}"></image>
+    </view>
+    <view class='car-list-text'>
+      <text class='car-name'>{{car.carName}}</text>
+      <text class='car-price'>{{car.carPriceMin + '万-' + car.carPriceMax + '万'}}</text>
+      <button size='mini'>{{car.carSlogan}}</button>
+    </view>
+    <view class="right-img">
+      <image mode="scaleToFill" src="/pages/image/xiangyou.png"></image>
+    </view>
+  </view>
+  <view wx:if='{{car_list.length == 0}}' style="text-align:center;">暂无数据</view>
+</view>
+

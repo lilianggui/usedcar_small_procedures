@@ -1,0 +1,35 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/mine/index",
+    "pages/customized/index",
+    "pages/appointment/index",
+    "pages/detail/index"
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "展厅",
+        "iconPath": "pages/image/car_show_1.png",
+        "selectedIconPath": "pages/image/car_show_2.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "pages/image/mine_1.png",
+        "selectedIconPath": "pages/image/mine_2.png"
+      }
+    ]
+  }
+
+}

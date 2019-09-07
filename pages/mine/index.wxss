@@ -1,0 +1,89 @@
+
+#userInfo{
+  margin:20rpx;
+  padding:10rpx;
+}
+#userInfo .page-body-info {
+  width: 100%;
+  
+}
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.userinfo-nickname {
+  margin-top: 20rpx;
+  width: 100%;
+  font-size: 38rpx;
+  display: block;
+  text-align: center;
+  
+}
+
+#business-card{
+  border: solid 1px #ccc;
+  border-radius:5px;
+  margin:20rpx;
+  padding:20rpx
+}
+
+#business-card .business-card-title{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#business-card .title-and-edit{
+  flex-direction: row;
+}
+
+#business-card .business-card-title{
+  font-size: 16px;
+  
+}
+
+#business-card .edit-business-card{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+}
+
+#business-card .business-card-info{
+  width: 500rpx;
+  margin: 20rpx 0 10rpx 20rpx;
+}
+
+#business-card .business-card-info text{
+  display: block;
+  font-size: 14px;
+  color: #888888;
+}
+
+#mine-bottom{
+  border: solid 1px #ccc;
+  border-radius:5px;
+  margin:30rpx 20rpx 20rpx 20rpx;
+  padding:20rpx
+}
+
+#mine-bottom .mine-bottom-item{
+  display: flex;
+  align-items: center;
+}
+
+#mine-bottom image{
+  width: 38rpx;
+  height: 38rpx;
+}
+
+#mine-bottom text{
+  font-size: 38rpx;
+  color: #888888;
+  margin-left: 20rpx;
+}
+
+
+

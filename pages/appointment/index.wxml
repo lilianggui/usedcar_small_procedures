@@ -1,0 +1,19 @@
+<view id="my-appointment-list">
+  <view class="my-appointment-item"  
+    wx:for='{{appointment_list}}' wx:key='carId' wx:for-item='car' 
+    style='border-bottom:{{index!=car_list.length-1?"1px":"0"}} solid #dddddd' 
+    bindtap='to_detail' data-car="{{car}}">
+    <view class='my-appointment-images'>
+      <image mode="scaleToFill" src="{{image_url_pre + car.mainImage}}"></image>
+    </view>
+    <view class='my-appointment-text'>
+      <text class='car-name'>{{car.carName}}</text>
+      <text class='car-price'>{{car.carPriceMin + '万-' + car.carPriceMax + '万'}}</text>
+      <button size='mini'>{{status_dict[car.appointmentStatus+'']}}</button>
+    </view>
+    <text id="arrive-shop-time" >预约时间：{{car.appointmentDate}}</text>
+  </view>
+  <view wx:if='{{appointment_list.length === 0}}'  style="text-align:center;">暂无数据</view>
+</view>
+
+
